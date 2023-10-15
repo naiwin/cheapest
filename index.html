@@ -37,7 +37,7 @@
     <!--img src="./resource/naiwin_logo.png" alt="Logo" class="logo"-->
     <div class="card">
         <h5 class="card-header">Cheapest</h5>
-        <div class="card-body">
+        <div class="card-body" id="main_layout">
             <p class="card-text">
                 เปรียบเทียบราคาสินค้าเดียวกัน สองปริมาตร เพื่อเลือกซื้อสินค้าที่คุ้มค่าที่สุด
             </p>
@@ -61,26 +61,12 @@
             <div class="row g-3">
                 <label class="form-label "> </label>
             </div>
-            <div class="row g-3">
-                <div class="col-sm-2">
-                    <label class="form-label ">สินค้า 1.</label>
-                </div>
-                <div class="col">
-                    <input id="input_1_size" type="number" class="form-control mb-3" placeholder="ปริมาตร,จำนวน">
-                </div>
-                <div class="col">
-                    <input id="input_1_price" type="number" class="form-control mb-3" placeholder="ราคา">
-                </div>
-            </div>
-            <div class="row g-3">
-                <div class="col-sm-2">
-                    <label class="form-label ">สินค้า 2.</label>
-                </div>
-                <div class="col">
-                    <input id="input_2_size" type="number" class="form-control mb-3" placeholder="ปริมาตร,จำนวน">
-                </div>
-                <div class="col">
-                    <input id="input_2_price" type="number" class="form-control mb-3" placeholder="ราคา">
+            <p id="main_row">
+            </p>
+            <div class="row mt-3">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+                    <button id="plus_bt" type="button" class="btn btn-secondary" py-click="do_add_row()">+</button>
+                    <button id="minus_bt" type="button" class="btn btn-secondary" py-click="do_delete_row()">-</button>
                 </div>
             </div>
             <div class="row g-3">
@@ -91,7 +77,7 @@
                     <label id="output_label" class="form-label "></label>
                 </div>
             </div>
-            <div class="row g-3">
+            <div class="row mt-3">
                 <label class="form-label "> </label>
             </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -100,6 +86,10 @@
             </div>
         </div>
     </div>
+    <py-config>
+        [[fetch]]
+        files = ["./utils.py"]
+    </py-config>
     <py-script src="./main.py">
     </py-script>
     <div class="footer">
