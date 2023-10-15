@@ -66,7 +66,7 @@ def do_delete_row():
     global ROW_COUNT
     if ROW_COUNT <= 2:
         set_element_value(
-            element_name="output_label", value="ข้อมูลเปรียบเทีบขั้นต่ำคือสองชุด"
+            element_name="output_label", value="ข้อมูลเปรียบเทียบขั้นต่ำคือสองชุด"
         )
         return
     element = js.document.getElementById(ROW_DICT.get(ROW_COUNT).get("row_id"))
